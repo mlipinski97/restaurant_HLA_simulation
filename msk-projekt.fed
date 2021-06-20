@@ -1,0 +1,57 @@
+;; A comment in the test file, just to show I'm cool ;;
+(FED
+  (Federation producer-consumer)
+  (FEDversion v1.3)
+  (spaces
+    (space TestSpace
+      (dimension TestDimension)
+    )
+    (space OtherSpace
+      (dimension OtherDimension)
+    )
+  )
+
+  (objects
+    (class ObjectRoot
+      (attribute privilegeToDelete reliable timestamp)
+      (class RTIprivate)
+      (class Restaurant
+        (attribute stock reliable timestamp TestSpace)
+      )
+    )
+  )
+  (interactions
+    (class InteractionRoot reliable timestamp
+      (class RTIprivate reliable timestamp)
+      (class Finish reliable timestamp)
+      (class ClientArrival reliable timestamp TestSpace
+        (parameter clientId)
+      )
+      (class ClientEnteringRestaurant reliable timestamp TestSpace
+        (parameter clientId)
+      )
+      (class ClientLeavingQueue reliable timestamp TestSpace
+        (parameter clientId)
+      )
+      (class ClientLeavingRestaurant reliable timestamp TestSpace
+        (parameter clientId)
+      )
+      (class NoticeAboutNumberOfTables reliable timestamp TestSpace
+        (parameter freeTableAmount)
+      )
+      (class AskForWaiter reliable timestamp TestSpace
+         (parameter tableId)
+      )
+      (class EndOfService reliable timestamp TestSpace
+         (parameter tableId)
+      )
+      (class AskAgainForWaiter reliable timestamp TestSpace
+         (parameter tableId)
+       )
+       (class SimulationEnd reliable timestamp TestSpace
+         (parameter name)
+       )
+    )
+  )
+)
+

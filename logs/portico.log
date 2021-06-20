@@ -1,0 +1,13 @@
+ERROR [main] portico.lrc.jgroups: FAILURE createFederation: already exists, name=ExampleFederation
+ERROR [main] portico.lrc: federation exists: ExampleFederation
+org.portico.lrc.compat.JFederationExecutionAlreadyExists: federation exists: ExampleFederation
+	at org.portico.bindings.jgroups.Federation.sendCreateFederation(Federation.java:222)
+	at org.portico.bindings.jgroups.JGroupsConnection.createFederation(JGroupsConnection.java:218)
+	at org.portico.lrc.services.federation.handlers.outgoing.CreateFederationHandler.process(CreateFederationHandler.java:89)
+	at org.portico.utils.messaging.MessageSink.process(MessageSink.java:187)
+	at org.portico.impl.hla13.Impl13Helper.processMessage(Impl13Helper.java:123)
+	at org.portico.impl.hla13.Rti13Ambassador.processMessage(Rti13Ambassador.java:5822)
+	at org.portico.impl.hla13.Rti13Ambassador.createFederationExecution(Rti13Ambassador.java:194)
+	at simulation.AbstractFederate.runFederate(AbstractFederate.java:34)
+	at simulation.waitingqueue.WaitingQueueFederate.main(WaitingQueueFederate.java:WARN  [VERIFY_SUSPECT.TimerThread,ExampleFederation,A-38741] portico.lrc.jgroups: Detected that federate [unkonwn] may have crashed, investigating...
+WARN  [Regular] portico.lrc.jgroups: Unknown channel member crashed. Don't think it was a federate. Ignoring. uuid=f0f6512e-bd9c-455d-8055-a597b98c3ada
